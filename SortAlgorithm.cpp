@@ -1,7 +1,7 @@
 #include <iostream>  
 #include <vector>  
 using namespace std;  
-  
+*********************************************************************************************************
 //QuickSort  
 //from low to high  
 //一趟QuickSort  
@@ -34,7 +34,7 @@ void QuickSort(vector<int> &L)
 {  
     QSort(L, 0, L.size()-1);//数据从L[0]开始，L[L.size()-1]结束  
 }  
-  
+*********************************************************************************************************  
 //BubbleSort  
 //from low to high  
 void BubbleSort(vector<int> &L)  
@@ -52,7 +52,7 @@ void BubbleSort(vector<int> &L)
         }  
     }  
 }  
-  
+*********************************************************************************************************
 //SelectSort  
 //from low to high  
 void SelectSort(vector<int> &L)  
@@ -72,9 +72,8 @@ void SelectSort(vector<int> &L)
         L[min] = tem;  
     }  
 }  
-
-
-//SelectSort  
+*********************************************************************************************************
+//HeapSort  
 //from high to low  
 void HeapAdjust(vector<int>&L, int s, int m)
 {
@@ -88,7 +87,6 @@ void HeapAdjust(vector<int>&L, int s, int m)
 	}
 	L[s-1] = rc;
 }
-
 void HeapSort(vector<int>&L)
 {
 	//从最后一个非终端节点开始构建最小堆
