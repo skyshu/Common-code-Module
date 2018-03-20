@@ -101,3 +101,32 @@ void HeapSort(vector<int>&L)
 		HeapAdjust(L, 1, i - 1);
 	}
 }
+*********************************************************************************************************
+//HeapSort<template版>  
+//from low to high  
+template <typename T>
+void HeapAdjust(vector<T>&L, size_t s, size_t m)
+{
+	T rc = L[s - 1];
+	for (size_t i = 2*s; i <= m; i *= 2)
+	{
+		if (i < m && L[i - 1] < L[i]) ++i;
+		if (L[i-1] < rc) break;
+		L[s - 1] = L[i-1];
+		s = i;
+	}
+	L[s-1] = rc;
+}
+template <typename T>
+void HeapSort(vector<T>&L)
+{
+	for (size_t i = L.size() / 2; i > 0; --i)
+		HeapAdjust(L, i, L.size());
+	for (size_t i = L.size(); i > 1; --i)
+	{
+		T tmp = L[0];
+		L[0] = L[i - 1];
+		L[i - 1] = tmp;
+		HeapAdjust(L, 1, i - 1);
+	}
+}
